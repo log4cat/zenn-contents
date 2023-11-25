@@ -22,7 +22,7 @@
   👇  投稿をプレビューする
   $ zenn preview
 
-## Install
+## Initialization
 
 [GitHubリポジトリでZennのコンテンツを管理する](https://zenn.dev/zenn/articles/connect-to-github)
 
