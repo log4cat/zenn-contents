@@ -14,13 +14,15 @@
   早速コンテンツを作成しましょう
 
   👇  新しい記事を作成する
-  $ zenn new:article
+  $ npx zenn new:article
+  $ npx zenn new:article --slug 記事のスラッグ --title タイトル --type [tech|idea] --emoji ✨
 
   👇  新しい本を作成する
-  $ zenn new:book
+  $ npx zenn new:book
+  $ npx zenn new:book --slug
 
   👇  投稿をプレビューする
-  $ zenn preview
+  $ npx zenn preview
 
 ## Initialization
 
