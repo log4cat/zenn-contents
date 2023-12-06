@@ -10,19 +10,37 @@
 
 * [📘 How to use](https://zenn.dev/zenn/articles/zenn-cli-guide)
 
-  🎉  Done!
-  早速コンテンツを作成しましょう
-
   👇  新しい記事を作成する
+
   $ npx zenn new:article
+
   $ npx zenn new:article --slug 記事のスラッグ --title タイトル --type [tech|idea] --emoji ✨
 
   👇  新しい本を作成する
+
   $ npx zenn new:book
+
   $ npx zenn new:book --slug
 
   👇  投稿をプレビューする
+
   $ npx zenn preview
+
+  📄  記事の一覧を表示
+
+  $ npx zenn list:articles
+
+  📚  本の一覧を表示
+
+  $ npx zenn list:books
+
+  🎈  zenn-cliのバージョンを表示
+
+  $ npx zenn --version, -v
+
+  ❓  ヘルプ
+
+  $ npx zenn --help, -h
 
 ## Initialization
 
