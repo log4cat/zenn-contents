@@ -3,7 +3,7 @@ title: "Shift_JIS撲滅委員会"
 emoji: "🧟"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [SJIS, 文字コード]
-published: false
+published: true
 ---
 
 ここに**Shift_JIS撲滅委員会**を発足します。
