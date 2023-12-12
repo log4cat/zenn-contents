@@ -2,7 +2,7 @@
 title: "Shift_JIS撲滅委員会"
 emoji: "🧟"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: [Shift_JIS]
+topics: [SJIS, 文字コード]
 published: false
 ---
 
