@@ -10,7 +10,7 @@ published: false
 
 合言葉は，
 
-- **NO MORE Shift_JIS**
+"**NO MORE Shift_JIS**"
 
 です。
 
