@@ -45,8 +45,9 @@ cat /proc/version # Linuxカーネルの情報
 ```bash:コマンド環境
 echo $LANG # 言語と文字コード
 alias # エイリアス
-echo $SHELL # デフォルトのShell
+echo $SHELL # Login Shell
 cat /etc/shells # インストール済のShell
+echo $0 # 現在のShell
 ```
 
 ```bash:ネットワーク設定
