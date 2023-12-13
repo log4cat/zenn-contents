@@ -91,17 +91,19 @@ apt list {package_name} # パッケージ名から検索
 apt search {package_name} # 説明文から検索
 ```
 
-## パッケージ関連(yum)
+## パッケージ関連(yum/dnf)
 
 Fedora系で使用。
 
-```bash:yum
-yum list installed # インストール済のパッケージ一覧
-yum list available # インストール可能なパッケージ一覧
-yum list # インストール可能／済のパッケージ一覧
-yum list | grep {package_name} # パッケージ名から検索
-yum search {package_name} # 説明文から検索
+```bash:yum/dnf
+dnf list installed # インストール済のパッケージ一覧
+dnf list available # インストール可能なパッケージ一覧
+dnf list # インストール可能／済のパッケージ一覧
+dnf list | grep {package_name} # パッケージ名から検索
+dnf search {package_name} # 説明文から検索
 ```
+
+※"dnf"は"yum"と置き換えても同じ
 
 ## Docker
 
