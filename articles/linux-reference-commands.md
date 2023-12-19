@@ -53,7 +53,7 @@ umask # 現在のumask(ファイルやディレクトリ作成時の権限に影
 
 ```bash:ネットワーク設定
 ip addr #IPアドレス
-ip a # ip addr showと同じ
+ip a # ip addrと同じ
 ip route # ルーティング
 cat /etc/resolv.conf # DNS
 ping {host_name} # ホスト名 or IPアドレスを指定
