@@ -48,6 +48,7 @@ alias # エイリアス
 echo $SHELL # Login Shell
 cat /etc/shells # インストール済のShell
 echo $0 # 現在のShell
+umask # 現在のumask(ファイルやディレクトリ作成時の権限に影響する)
 ```
 
 ```bash:ネットワーク設定
@@ -58,15 +59,28 @@ cat /etc/resolv.conf # DNS
 ping {host_name} # ホスト名 or IPアドレスを指定
 ```
 
-```bash:ディレクトリ関連
+```bash:ディレクトリ
+cd # ディレクトリ移動
 pwd # カレントディレクトリ
 ll # ファイルとディレクトリ一覧
-ls -lhF --all --full-time / # -l:長いフォーマット -F:タイプ識別子 -h:サイズを読みやすく --full-time:完全な日時 /:ルートディレクトリ
+ls -alhF --full-time / # -a:隠しファイルも -l:長いフォーマット -F:タイプ識別子 -h:サイズを読みやすく --full-time:完全な日時 /:ルートディレクトリ
+```
+
+```bash:ファイル
+find {directory} -name {file_name} # ファイル検索
+cat {file_path} # 内容を表示
+cat {file_path1} {file_path2} # 内容を連結して表示
+less {file_path} # ページ送りで内容を表示(スクロール化)
+more {file_path} # ページ送りで内容を表示
+diff {file_path1} {file_path2} # 差分を表示
+grep {pattern} {file_path} # grep
+head {file_path} # ファイルの先頭10行を表示
+tail {file_path} # ファイルの末尾10行を表示
 ```
 
 ## 運用状況
 
-```bash:サーバー関連
+```bash:サーバー
 uptime # 起動時間
 top # システムのリソース使用状況
 ps -efl # プロセス
@@ -78,11 +92,11 @@ cat /etc/passwd # 存在するユーザーの一覧
 cat /etc/group # 存在するグループの一覧
 who # ログイン中のユーザー
 last # ログイン履歴
+history # 現在のユーザーのコマンド履歴
+sudo cat /home/{ユーザー名}/.bash_history # 特定のユーザーのコマンド履歴(要権限)
 ```
 
-## パッケージ関連(apt)
-
-Debian系で使用。
+## apt(Debianのパッケージ)
 
 ```bash:apt
 apt list --installed # インストール済のパッケージ一覧
@@ -91,9 +105,7 @@ apt list {package_name} # パッケージ名から検索
 apt search {package_name} # 説明文から検索
 ```
 
-## パッケージ関連(yum/dnf)
-
-Fedora系で使用。
+## yum/dnf(Fedoraのパッケージ)
 
 ```bash:yum/dnf
 dnf list installed # インストール済のパッケージ一覧
