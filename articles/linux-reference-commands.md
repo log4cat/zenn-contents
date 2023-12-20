@@ -82,6 +82,10 @@ tail {file_path} # ファイルの末尾10行を表示
 
 ```bash:サーバー
 uptime # 起動時間
+uptime -s # 起動時刻
+date -u # システムクロックの表示(UTC)
+TZ=JST-9 date # システムクロックの表示(JST)
+TZ=Asia/Tokyo date # 同上
 top # システムのリソース使用状況
 ps -efl # プロセス
 ps axu # プロセス(BSDシンタックス)
