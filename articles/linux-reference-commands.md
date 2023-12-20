@@ -63,8 +63,15 @@ ping {host_name} # ホスト名 or IPアドレスを指定
 cd # ディレクトリ移動
 pwd # カレントディレクトリ
 ll # ファイルとディレクトリ一覧
-ls -alhF --full-time / # -a:隠しファイルも -l:長いフォーマット -h:サイズを読みやすく -F:タイプ識別子 --full-time:完全な日時 /:ルートディレクトリ
+ls -alhF {directory} # -a:隠しファイルも -l:長いフォーマット -h:サイズを読みやすく -F:タイプ識別子
+ls -l --time-style=long-iso {directory} # タイムスタンプをISO(のような)形式で分単位まで
+ls -l --time-style=full-iso {directory} # ナノ秒単位
+ls --full-time {directory} # --full-timeは-l --time-style=full-isoと同じ
+ls -l --time-style="+%Y%m%dT%H%M%S%z" # ISO 8601(基本形式)
+ls -l --time-style="+%Y-%m-%dT%H:%M:%S%:z" # ISO 8601(拡張形式)
 ```
+
+lsの標準オプションがISO 8601と違うのが気になります……
 
 ```bash:ファイル
 find {directory} -name {file_name} # ファイル検索
@@ -76,6 +83,7 @@ diff {file_path1} {file_path2} # 差分を表示
 grep {pattern} {file_path} # grep
 head {file_path} # ファイルの先頭10行を表示
 tail {file_path} # ファイルの末尾10行を表示
+tail -f {file_path} # ファイルへ追記されるデータをリアルタイム表示
 ```
 
 ## 運用状況
