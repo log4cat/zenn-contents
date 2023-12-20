@@ -82,7 +82,7 @@ ls -l --time-style="+%Y%m%dT%H%M%S%z" # ISO 8601(基本形式)
 ls -l --time-style="+%Y-%m-%dT%H:%M:%S%:z" # ISO 8601(拡張形式)
 ```
 
-lsの標準オプションがISO 8601と違うのが気になります……
+(lsの標準オプションがISO 8601と違うのが気になります……)
 
 ```bash:ファイル
 find {directory} -name {file_name} # ファイル検索
