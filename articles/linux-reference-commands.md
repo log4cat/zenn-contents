@@ -63,7 +63,7 @@ ping {host_name} # ホスト名 or IPアドレスを指定
 cd # ディレクトリ移動
 pwd # カレントディレクトリ
 ll # ファイルとディレクトリ一覧
-ls -alhF --full-time / # -a:隠しファイルも -l:長いフォーマット -F:タイプ識別子 -h:サイズを読みやすく --full-time:完全な日時 /:ルートディレクトリ
+ls -alhF --full-time / # -a:隠しファイルも -l:長いフォーマット -h:サイズを読みやすく -F:タイプ識別子 --full-time:完全な日時 /:ルートディレクトリ
 ```
 
 ```bash:ファイル
@@ -87,6 +87,7 @@ date -u # システムクロックの表示(UTC)
 TZ=JST-9 date # システムクロックの表示(JST)
 TZ=Asia/Tokyo date # 同上
 TZ=JST-9 date -Iseconds # -I[単位]でISO 8601形式
+timedatectl status # タイムゾーン設定など
 top # システムのリソース使用状況
 ps -efl # プロセス
 ps axu # プロセス(BSDシンタックス)
