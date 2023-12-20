@@ -18,11 +18,21 @@ published: true
 - Ubuntu 22.04.3 LTS(Debian系)
 - AlmaLinux 9.3(Fedora系, RHEL 9.3相当)
 
-## マニュアル
+## Linuxで最初に絶対に覚えるべき操作
 
 ```bash:マニュアル
-man {command_name} # コマンドのマニュアル 
+man {command_name} # コマンドのマニュアル(qで閉じます)
 man man # manコマンドのマニュアル
+```
+
+Linuxで最初に覚えるべきコマンドは`man`です。
+
+```bash:ジョブ
+Ctrl + c # コマンドを途中で終わらせてプロンプトに戻る
+Ctrl + z # コマンドを一時停止してプロンプトに戻る(再開可能)
+jobs # ジョブID
+fg {job_id} # 一時停止したジョブをフォアグラウンドにする
+bg {job_id} # 一時停止したジョブをバックグラウンドにする
 ```
 
 ## スペックや構成の確認
@@ -48,6 +58,7 @@ alias # エイリアス
 echo $SHELL # Login Shell
 cat /etc/shells # インストール済のShell
 echo $0 # 現在のShell
+ll /bin/sh # shのシンボリックリンク(一般的にbash)
 umask # 現在のumask(ファイルやディレクトリ作成時の権限に影響する)
 ```
 
