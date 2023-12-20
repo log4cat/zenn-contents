@@ -86,6 +86,7 @@ uptime -s # 起動時刻
 date -u # システムクロックの表示(UTC)
 TZ=JST-9 date # システムクロックの表示(JST)
 TZ=Asia/Tokyo date # 同上
+TZ=JST-9 date -Iseconds # -I[単位]でISO 8601形式
 top # システムのリソース使用状況
 ps -efl # プロセス
 ps axu # プロセス(BSDシンタックス)
