@@ -129,3 +129,11 @@ sudo docker container ls # コンテナ一覧
 sudo docker container stats # コンテナ稼働状況
 sudo docker network ls # ネットワーク一覧
 ```
+
+## パイプ処理
+
+```bash:パイプ処理
+{command} | grep {pattern} # コマンドの結果をgrep
+{command} | sort # コマンドの結果をソート
+diff <({command1}) <({command2}) # コマンドの結果をdiff
+```
