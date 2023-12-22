@@ -18,11 +18,21 @@ published: true
 - Ubuntu 22.04.3 LTS(Debian系)
 - AlmaLinux 9.3(Fedora系, RHEL 9.3相当)
 
-## マニュアル
+## Linuxで最初に絶対に覚えるべき操作
 
 ```bash:マニュアル
-man {command_name} # コマンドのマニュアル 
+man {command_name} # コマンドのマニュアル(qで閉じる)
 man man # manコマンドのマニュアル
+```
+
+Linuxで最初に覚えるべきコマンドは`man`です。
+
+```bash:ジョブ
+Ctrl + c # コマンドを途中で終わらせてプロンプトに戻る
+Ctrl + z # コマンドを一時停止してプロンプトに戻る(再開可能)
+jobs # ジョブID
+fg {job_id} # 一時停止したジョブをフォアグラウンドにする
+bg {job_id} # 一時停止したジョブをバックグラウンドにする
 ```
 
 ## スペックや構成の確認
@@ -48,26 +58,55 @@ alias # エイリアス
 echo $SHELL # Login Shell
 cat /etc/shells # インストール済のShell
 echo $0 # 現在のShell
+ll /bin/sh # shのシンボリックリンク(一般的にbash)
+umask # 現在のumask(ファイルやディレクトリ作成時の権限に影響する)
 ```
 
 ```bash:ネットワーク設定
 ip addr #IPアドレス
-ip a # ip addr showと同じ
+ip a # ip addrと同じ
 ip route # ルーティング
 cat /etc/resolv.conf # DNS
 ping {host_name} # ホスト名 or IPアドレスを指定
 ```
 
-```bash:ディレクトリ関連
+```bash:ディレクトリ
+cd # ディレクトリ移動
 pwd # カレントディレクトリ
 ll # ファイルとディレクトリ一覧
-ls -lhF --all --full-time / # -l:長いフォーマット -F:タイプ識別子 -h:サイズを読みやすく --full-time:完全な日時 /:ルートディレクトリ
+ls -alhF {directory} # -a:隠しファイルも -l:長いフォーマット -h:サイズを読みやすく -F:タイプ識別子
+ls -l --time-style=long-iso {directory} # タイムスタンプをISO(のような)形式で分単位まで
+ls -l --time-style=full-iso {directory} # ナノ秒単位
+ls --full-time {directory} # --full-timeは-l --time-style=full-isoと同じ
+ls -alhF --time-style="+%Y%m%dT%H%M%S%z" # ISO 8601(基本形式)
+ls -alhF --time-style="+%Y-%m-%dT%H:%M:%S%:z" # ISO 8601(拡張形式)
+```
+
+(lsの標準オプションがISO 8601と違うのが気になります……)
+
+```bash:ファイル
+find {directory} -name {file_name} # ファイル検索
+cat {file_path} # 内容を表示
+cat {file_path1} {file_path2} # 内容を連結して表示
+less {file_path} # ページ送りで内容を表示(スクロール化)
+more {file_path} # ページ送りで内容を表示
+diff {file_path1} {file_path2} # 差分を表示
+grep {pattern} {file_path} # grep
+head {file_path} # ファイルの先頭10行を表示
+tail {file_path} # ファイルの末尾10行を表示
+tail -f {file_path} # ファイルへ追記されるデータをリアルタイム表示
 ```
 
 ## 運用状況
 
-```bash:サーバー関連
+```bash:サーバー
 uptime # 起動時間
+uptime -s # 起動時刻
+date -u # システムクロックの表示(UTC)
+TZ=JST-9 date # システムクロックの表示(JST)
+TZ=Asia/Tokyo date # 同上
+TZ=JST-9 date -Iseconds # -I[単位]でISO 8601形式
+timedatectl status # タイムゾーン設定など
 top # システムのリソース使用状況
 ps -efl # プロセス
 ps axu # プロセス(BSDシンタックス)
@@ -78,11 +117,11 @@ cat /etc/passwd # 存在するユーザーの一覧
 cat /etc/group # 存在するグループの一覧
 who # ログイン中のユーザー
 last # ログイン履歴
+history # 現在のユーザーのコマンド履歴
+sudo cat /home/{ユーザー名}/.bash_history # 特定のユーザーのコマンド履歴(要権限)
 ```
 
-## パッケージ関連(apt)
-
-Debian系で使用。
+## apt(Debianのパッケージ)
 
 ```bash:apt
 apt list --installed # インストール済のパッケージ一覧
@@ -91,9 +130,7 @@ apt list {package_name} # パッケージ名から検索
 apt search {package_name} # 説明文から検索
 ```
 
-## パッケージ関連(yum/dnf)
-
-Fedora系で使用。
+## yum/dnf(Fedoraのパッケージ)
 
 ```bash:yum/dnf
 dnf list installed # インストール済のパッケージ一覧
@@ -116,4 +153,12 @@ sudo docker image inspect {image_name} # イメージ詳細
 sudo docker container ls # コンテナ一覧
 sudo docker container stats # コンテナ稼働状況
 sudo docker network ls # ネットワーク一覧
+```
+
+## パイプ処理
+
+```bash:パイプ処理
+{command} | grep {pattern} # コマンドの結果をgrep
+{command} | sort # コマンドの結果をソート
+diff <({command1}) <({command2}) # コマンドの結果をdiff
 ```
