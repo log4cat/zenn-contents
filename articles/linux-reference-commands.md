@@ -21,7 +21,7 @@ published: true
 ## Linuxで最初に絶対に覚えるべき操作
 
 ```bash:マニュアル
-man {command_name} # コマンドのマニュアル(qで閉じます)
+man {command_name} # コマンドのマニュアル(qで閉じる)
 man man # manコマンドのマニュアル
 ```
 
@@ -78,8 +78,8 @@ ls -alhF {directory} # -a:隠しファイルも -l:長いフォーマット -h:�
 ls -l --time-style=long-iso {directory} # タイムスタンプをISO(のような)形式で分単位まで
 ls -l --time-style=full-iso {directory} # ナノ秒単位
 ls --full-time {directory} # --full-timeは-l --time-style=full-isoと同じ
-ls -l --time-style="+%Y%m%dT%H%M%S%z" # ISO 8601(基本形式)
-ls -l --time-style="+%Y-%m-%dT%H:%M:%S%:z" # ISO 8601(拡張形式)
+ls -alhF --time-style="+%Y%m%dT%H%M%S%z" # ISO 8601(基本形式)
+ls -alhF --time-style="+%Y-%m-%dT%H:%M:%S%:z" # ISO 8601(拡張形式)
 ```
 
 (lsの標準オプションがISO 8601と違うのが気になります……)
