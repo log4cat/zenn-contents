@@ -121,7 +121,7 @@ history # 現在のユーザーのコマンド履歴
 sudo cat /home/{ユーザー名}/.bash_history # 特定のユーザーのコマンド履歴(要権限)
 ```
 
-## apt(Debianのパッケージ)
+## apt(Debian系)
 
 ```bash:apt
 apt list --installed # インストール済のパッケージ一覧
@@ -130,17 +130,38 @@ apt list {package_name} # パッケージ名から検索
 apt search {package_name} # 説明文から検索
 ```
 
-## yum/dnf(Fedoraのパッケージ)
+## dnf(RHEL 8以降)
 
-```bash:yum/dnf
+```bash:dnf
 dnf list installed # インストール済のパッケージ一覧
 dnf list available # インストール可能なパッケージ一覧
 dnf list # インストール可能／済のパッケージ一覧
-dnf list | grep {package_name} # パッケージ名から検索
-dnf search {package_name} # 説明文から検索
+dnf list {glob_expression} # 1つ以上のglob表現でフィルタリング
+dnf list *{package_name}* # パッケージ名から検索
+dnf search {keyword} # パッケージ名と概要から検索
 ```
 
-※"dnf"は"yum"と置き換えても同じ
+※なお、`dnf`も`yum`も`dnf-3`にリンクされている。
+
+```bash
+$ ll /bin/dnf
+lrwxrwxrwx. 1 root root 5 Nov 15  2022 /bin/dnf -> dnf-3
+$ ll /bin/yum
+lrwxrwxrwx. 1 root root 5 Nov 15  2022 /bin/yum -> dnf-3
+```
+
+## yum(RHEL 7以前)
+
+CentOS 7.3で確認。
+
+```bash:yum
+yum list installed # インストール済のパッケージ一覧
+yum list available # インストール可能なパッケージ一覧
+yum list # インストール可能／済のパッケージ一覧
+yum list {glob_expression} # 1つ以上のglob表現でフィルタリング
+yum list *{package_name}* # パッケージ名から検索
+yum search {keyword} # パッケージ名と概要から検索
+```
 
 ## Docker
 
