@@ -23,6 +23,7 @@ published: true
 ```bash:マニュアル
 man {command_name} # コマンドのマニュアル(qで閉じる)
 man man # manコマンドのマニュアル
+help # bashのビルトインコマンド
 ```
 
 Linuxで最初に覚えるべきコマンドは`man`です。
@@ -47,6 +48,7 @@ uname -m # archと同じ
 ```
 
 ```bash:OS情報
+hostname # ホスト名
 cat /etc/os-release # Linuxディストリビューション
 uname -a # Linuxカーネルの情報
 cat /proc/version # Linuxカーネルの情報
@@ -63,12 +65,13 @@ umask # 現在のumask(ファイルやディレクトリ作成時の権限に影
 ```
 
 ```bash:ネットワーク設定
-ip addr #IPアドレス
-ip a # ip addrと同じ
+ip address #IPアドレス "ip a"でも可能
 ip route # ルーティング
 cat /etc/resolv.conf # DNS
 ping {host_name} # ホスト名 or IPアドレスを指定
 ```
+
+## ファイルとディレクトリ
 
 ```bash:ディレクトリ
 cd # ディレクトリ移動
@@ -91,10 +94,6 @@ cat {file_path1} {file_path2} # 内容を連結して表示
 less {file_path} # ページ送りで内容を表示(スクロール化)
 more {file_path} # ページ送りで内容を表示
 diff {file_path1} {file_path2} # 差分を表示
-grep {pattern} {file_path} # grep
-head {file_path} # ファイルの先頭10行を表示
-tail {file_path} # ファイルの末尾10行を表示
-tail -f {file_path} # ファイルへ追記されるデータをリアルタイム表示
 ```
 
 ## 運用状況
@@ -119,6 +118,23 @@ who # ログイン中のユーザー
 last # ログイン履歴
 history # 現在のユーザーのコマンド履歴
 sudo cat /home/{ユーザー名}/.bash_history # 特定のユーザーのコマンド履歴(要権限)
+```
+
+## フィルタとパイプライン
+
+```bash:フィルタ
+grep {pattern} {file_path} # grep
+head {file_path} # ファイルの先頭10行を表示
+tail {file_path} # ファイルの末尾10行を表示
+tail -f {file_path} # ファイルへ追記されるデータをリアルタイム表示
+uniq {file_path} # 重複した行を削除する
+cut {option} {file_path} # オプションで指定した方法で項目を切り出す
+```
+
+```bash:パイプ処理
+{command} | grep {pattern} # コマンドの結果をgrep
+{command} | sort # コマンドの結果をソート
+diff <({command1}) <({command2}) # コマンドの結果をdiff
 ```
 
 ## apt(Debian系)
@@ -175,12 +191,4 @@ sudo docker image inspect {image_name} # イメージ詳細
 sudo docker container ls # コンテナ一覧
 sudo docker container stats # コンテナ稼働状況
 sudo docker network ls # ネットワーク一覧
-```
-
-## パイプ処理
-
-```bash:パイプ処理
-{command} | grep {pattern} # コマンドの結果をgrep
-{command} | sort # コマンドの結果をソート
-diff <({command1}) <({command2}) # コマンドの結果をdiff
 ```
