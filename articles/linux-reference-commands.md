@@ -23,6 +23,7 @@ published: true
 ```bash:マニュアル
 man {command_name} # コマンドのマニュアル(qで閉じる)
 man man # manコマンドのマニュアル
+help # bashのビルトインコマンド
 ```
 
 Linuxで最初に覚えるべきコマンドは`man`です。
