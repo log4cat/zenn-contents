@@ -192,3 +192,10 @@ sudo docker container ls # コンテナ一覧
 sudo docker container stats # コンテナ稼働状況
 sudo docker network ls # ネットワーク一覧
 ```
+
+## Apache HTTP Server
+
+```bash:httpd
+httpd -v # バージョン
+systemctl status httpd # 起動状態
+```
