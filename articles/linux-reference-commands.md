@@ -78,7 +78,7 @@ ping {host_name} # ホスト名 or IPアドレスを指定
 ```bash:ディレクトリ
 cd # ディレクトリ移動
 pwd # カレントディレクトリ
-ll # ファイルとディレクトリ一覧
+ll # ファイルとディレクトリ一覧。環境によってaliasの内容が違うので注意
 ls -alhF {directory} # -a:隠しファイルも -l:長いフォーマット -h:サイズを読みやすく -F:タイプ識別子
 ls -l --time-style=long-iso {directory} # タイムスタンプをISO(のような)形式で分単位まで
 ls -l --time-style=full-iso {directory} # ナノ秒単位
@@ -98,9 +98,9 @@ more {file_path} # ページ送りで内容を表示
 diff {file_path1} {file_path2} # 差分を表示
 ```
 
-## 運用状況
+## サーバーの運用状況
 
-```bash:サーバー
+```bash:時刻
 uptime # 起動時間
 uptime -s # 起動時刻
 date -u # システムクロックの表示(UTC)
@@ -108,9 +108,21 @@ TZ=JST-9 date # システムクロックの表示(JST)
 TZ=Asia/Tokyo date # 同上
 TZ=JST-9 date -Iseconds # -I[単位]でISO 8601形式
 timedatectl status # タイムゾーン設定など
+```
+
+```bash:リソース
 top # システムのリソース使用状況
-ps -efl # プロセス
-ps axu # プロセス(BSDシンタックス)
+vmstat # CPU使用率など
+```
+
+```bash:プロセス
+ps -efl # プロセス一覧
+ps axu # プロセス一覧(BSDシンタックス)
+```
+
+```bash:環境変数
+printenv # 現在のプロセスの環境変数
+cat /proc/{PID}/environ # プロセス開始時の環境変数
 ```
 
 ```bash:ユーザーとグループ
