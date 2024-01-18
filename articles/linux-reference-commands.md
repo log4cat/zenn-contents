@@ -18,6 +18,8 @@ published: true
 - Ubuntu 22.04.3 LTS(Debian系)
 - AlmaLinux 9.3(Fedora系, RHEL 9.3相当)
 
+bashで確認しています。
+
 ## Linuxで最初に絶対に覚えるべき操作
 
 ```bash:マニュアル
