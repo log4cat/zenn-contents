@@ -122,7 +122,15 @@ ps axu # プロセス一覧(BSDシンタックス)
 
 ```bash:環境変数
 printenv # 現在のプロセスの環境変数
-cat /proc/{PID}/environ # プロセス開始時の環境変数
+cat /proc/{PID}/environ # プロセス開始時の環境変数(同じユーザーなら見れる)
+```
+
+```bash:bashの設定
+cat /etc/profile # 全ユーザー、全シェル共通でログイン時に実行される
+cat ~/.bash_profile # ログイン時に実行される
+cat ~/.bash_login # .bash_profileが無い場合
+cat ~/.profile # .bash_profileも.bash_loginも無い場合
+cat ~/.bashrc # 非ログイン時にインタラクティブなシェル
 ```
 
 ```bash:ユーザーとグループ
