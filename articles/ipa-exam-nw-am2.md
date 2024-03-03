@@ -3,7 +3,7 @@ title: "ネスペ午前Ⅱ対策メモ"
 emoji: "✏"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: [情報処理技術者試験,ネットワークスペシャリスト]
-published: false
+published: true
 ---
 
 NWの午前Ⅱ試験で直前に読む用のメモ。
