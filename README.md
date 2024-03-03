@@ -20,6 +20,8 @@
 
   $ npx zenn new:article --slug 記事のスラッグ --title タイトル --type [tech|idea] --emoji ✨
 
+  Windowsの絵文字の出し方: Win + .
+
   👇  新しい本を作成する
 
   $ npx zenn new:book
