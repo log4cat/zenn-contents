@@ -237,9 +237,10 @@ TRACEは無いんですね。
 
 ### Linux systemdのSeverity
 
+```bash:bash
+man logger
 ```
-$ man logger
-```
+
 とかで確認可能。
 
 - 0:emerg
