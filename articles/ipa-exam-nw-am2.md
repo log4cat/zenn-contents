@@ -45,6 +45,9 @@ NWの午前Ⅱ試験で直前に読む用のメモ。
 無線LANで使用する。
 DIFSに電波を検知しなければデータを送信し，SIFSの後にACKを返す。
 
+SIFS(Short Inter Frame Space): 最短の待ち時間。
+DIFS(DCF Inter Frame Space): ビジー状態が終わったと判断されるまでの時間。
+
 #### CSMA/CD
 
 有線LANで使用する。
