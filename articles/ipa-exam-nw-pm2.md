@@ -3,7 +3,7 @@ title: "ネスペ午後Ⅱ対策メモ"
 emoji: "📝"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: [情報処理技術者試験,ネットワークスペシャリスト]
-published: false
+published: true
 ---
 
 NWの午後Ⅱ試験で直前に読む用のメモ。
@@ -253,7 +253,3 @@ IdPの秘密鍵を所有していないから
 ### 問 1 STP, RSTP, スタック
 
 ### 問 2 SNMP, 監視, BGP, OSPF
-
-:::details foo
-bar
-:::
